@@ -2,3 +2,4 @@
 *.zip filter=lfs diff=lfs merge=lfs -text
 *.csv filter=lfs diff=lfs merge=lfs -text
 *.gpkg filter=lfs diff=lfs merge=lfs -text
+base_2024/BR_subdistritos_CD2022.gpkg filter=lfs diff=lfs merge=lfs -text
