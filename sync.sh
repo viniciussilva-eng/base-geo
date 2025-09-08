@@ -1,15 +1,16 @@
 #!/bin/bash
 
 # ====================================================================
-# Script de Sincronização com GitHub v3.1 (Modo Seguro e Forçado)
+# Script de Sincronização com GitHub v4.0 (Interativo)
 #
+# Detecta e oferece correção para novos submódulos.
 # Uso:
 #   ./sync.sh        -> Executa o modo de sincronização padrão e seguro.
 #   ./sync.sh force  -> Executa o modo forçado (espelho local -> remoto).
 # ====================================================================
 
 # --- Configuração ---
-set -e # Aborta o script se qualquer comando falhar
+set -e 
 
 REPO_URL="git@github.com:viniciussilva-eng/base-geo.git"
 
@@ -27,25 +28,15 @@ log() {
 
 # --- Início do Script ---
 log "${BLUE}============================================${NC}"
-log "${BLUE}  INICIANDO SCRIPT DE SINCRONIZAÇÃO v3.1      ${NC}"
+log "${BLUE}  INICIANDO SCRIPT DE SINCRONIZAÇÃO v4.0      ${NC}"
 log "${BLUE}============================================${NC}"
 
-# 1. VALIDAÇÕES E SETUP INICIAL
 PROJETO_DIR=$(pwd)
 log "${YELLOW}📁 Projeto: $PROJETO_DIR${NC}"
 
-if ! git --version &>/dev/null; then
-    log "${RED}❌ Git não está instalado. Abortando.${NC}"
-    exit 1
-fi
-
+# 1. VALIDAÇÕES E SETUP INICIAL
 git config --global --add safe.directory "$PROJETO_DIR"
-
-if [ ! -d ".git" ]; then
-    log "${GREEN}✅ Repositório não encontrado. Inicializando...${NC}"
-    git init
-    git branch -M main
-fi
+if [ ! -d ".git" ]; then git init && git branch -M main; fi
 
 # 2. CONFIGURAÇÃO DO REMOTO (SSH)
 log "${BLUE}🔧 Configurando remoto para usar SSH: $REPO_URL${NC}"
@@ -56,22 +47,14 @@ git lfs install
 if [[ "$1" == "force" ]]; then
     # ==================== MODO FORÇADO (ESPELHO) ====================
     log "${RED}🚨 MODO FORÇADO ATIVADO! 🚨${NC}"
-    log "${YELLOW}Este modo fará o repositório remoto ser um ESPELHO EXATO da sua pasta local."
-    log "${YELLOW}Qualquer commit ou arquivo que exista no GitHub mas não aqui será APAGADO PERMANENTEMENTE.${NC}"
+    log "${YELLOW}Este modo fará o repositório remoto ser um ESPELHO EXATO da sua pasta local.${NC}"
     read -p "Você tem certeza que deseja continuar? (s/N): " confirm
-    if [[ "$confirm" != "s" && "$confirm" != "S" ]]; then
-        log "${GREEN}Operação cancelada pelo usuário.${NC}"
-        exit 0
-    fi
+    if [[ "$confirm" != "s" && "$confirm" != "S" ]]; then log "${GREEN}Operação cancelada.${NC}" && exit 0; fi
 
-    log "${BLUE}📦 Adicionando todas as alterações locais (novos, modificados, deletados)...${NC}"
     git add .
-
     log "${BLUE}✏️  Criando commit de espelhamento...${NC}"
-    # O || true evita que o script pare se não houver nada para commitar
     git commit -m "refactor(force): Sincronização forçada para espelhar estado local em $(date +"%Y-%m-%d %H:%M")" || true
-
-    log "${RED}🚀 Executando PUSH FORÇADO... Sobrescrevendo o remoto...${NC}"
+    log "${RED}🚀 Executando PUSH FORÇADO...${NC}"
     git push --force origin main
 
 else
@@ -79,29 +62,50 @@ else
     log "${GREEN}▶️  Executando em modo de sincronização padrão (seguro).${NC}"
 
     log "${BLUE}🔄 Puxando alterações do remoto (pull --rebase)...${NC}"
-    if ! git pull --rebase origin main; then
-        log "${RED}❌ Falha no 'git pull'. Resolva os conflitos ou limpe as alterações locais e tente novamente.${NC}"
-        exit 1
-    fi
+    git pull --rebase origin main
 
     log "${BLUE}🔄 Atualizando submódulos com as versões remotas...${NC}"
     git submodule update --remote --merge
 
     log "${YELLOW}🔍 Detectando arquivos grandes (>50MB) para Git LFS...${NC}"
-    ARQUIVOS_GRANDES=$(find . -type f -size +50M -not -path "./.git/*")
-    if [ -n "$ARQUIVOS_GRANDES" ]; then
-        log "${YELLOW}Arquivos grandes detectados. Rastreando com LFS...${NC}"
-        echo "$ARQUIVOS_GRANDES" | while read -r arquivo; do git lfs track "${arquivo#./}"; done
-        git add .gitattributes
-    fi
+    # Implementação mais robusta para detecção de LFS
+    find . -type f -size +50M -not -path "./.git/*" -print0 | while IFS= read -r -d '' file; do
+        if ! git lfs ls-files | grep -qF "./${file#./}"; then
+            log "${GREEN}   + Rastreando novo arquivo grande: ${file#./}${NC}"
+            git lfs track "${file#./}"
+            git add .gitattributes
+        fi
+    done
+
+    # Adiciona todas as alterações antes de verificar por submódulos
+    git add .
+
+    # ==================== NOVA FUNÇÃO: DETECÇÃO DE SUBMÓDULOS ====================
+    log "${YELLOW}🔍 Verificando se novas pastas foram adicionadas como submódulos...${NC}"
+    # Comando para encontrar novos submódulos adicionados ao stage
+    git diff --cached --raw | grep -E '160000 A' | cut -d'	' -f2 | while read -r submodule_path; do
+        log "${YELLOW}⚠️  DETECTADO: A pasta '${submodule_path}' foi adicionada como um submódulo (contém uma pasta .git).${NC}"
+        read -p "   -> Deseja convertê-la em uma pasta comum, adicionando seus arquivos ao projeto principal? (S/n): " choice
+        
+        # Default para 'Sim' se o usuário apenas pressionar Enter
+        choice=${choice:-S}
+
+        if [[ "$choice" == "S" || "$choice" == "s" ]]; then
+            log "${GREEN}   ✅ Convertendo '${submodule_path}' para um diretório comum...${NC}"
+            git rm --cached "$submodule_path"
+            rm -rf "$submodule_path/.git"
+            git add "$submodule_path"
+            log "${GREEN}   Conversão concluída. O commit continuará com a pasta corrigida.${NC}"
+        else
+            log "${YELLOW}   Ok, mantendo '${submodule_path}' como um submódulo.${NC}"
+        fi
+    done
+    # ==========================================================================
 
     if [ -z "$(git status --porcelain)" ]; then
         log "${GREEN}✅ Não há novas alterações locais para enviar. Sincronização concluída.${NC}"
         exit 0
     fi
-
-    log "${BLUE}📦 Adicionando alterações locais...${NC}"
-    git add .
 
     log "${BLUE}✏️  Criando commit...${NC}"
     git commit -m "feat(auto): Sincronização de arquivos em $(date +"%Y-%m-%d %H:%M")"
