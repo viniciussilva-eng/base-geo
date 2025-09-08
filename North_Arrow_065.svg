@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Creator: CorelDRAW -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:odm="http://product.corel.com/CGS/11/cddns/" xml:space="preserve" width="2835px" height="2835px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd"
+     viewBox="0 0 2836 2836">
+ <defs>
+  <font id="FontID0" fullFontName="Arial" fontVariant="normal" fontWeight="400,700">
+	<font-face 
+		font-family="Arial">
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="O" horiz-adv-x="777"><path d="M40 350c0,80 10,140 40,190 10,30 30,70 60,100 30,20 60,50 100,60 40,20 90,30 150,30 110,0 190,-30 250,-100 70,-70 100,-160 100,-270 0,-120 -30,-210 -100,-270 -60,-70 -140,-100 -250,-100 -100,0 -190,30 -250,100 -70,60 -100,150 -100,260zm150 10c0,-80 20,-140 60,-190 40,-40 80,-60 140,-60 60,0 110,20 140,60 40,50 60,110 60,190 0,80 -20,140 -60,180 -30,40 -80,60 -140,60 -60,0 -110,-20 -140,-60 -40,-40 -60,-100 -60,-180z"/></glyph>
+   <glyph unicode="N" horiz-adv-x="722"><path d="M70 0l0 720 140 0 300 -480 0 480 130 0 0 -720 -140 0 -290 470 0 -470 -140 0z"/></glyph>
+   <glyph unicode="W" horiz-adv-x="943"><path d="M170 0l-170 720 150 0 110 -500 130 500 170 0 130 -500 110 500 140 0 -170 -720 -150 0 -150 540 -140 -540 -160 0z"/></glyph>
+   <glyph unicode="S" horiz-adv-x="667"><path d="M40 230l140 20c10,-50 20,-90 50,-110 20,-20 60,-30 100,-30 50,0 80,10 110,30 20,20 30,40 30,70 0,20 0,30 -10,40 -10,10 -30,20 -50,30 -20,10 -60,20 -120,30 -80,20 -130,50 -160,70 -50,40 -70,90 -70,150 0,30 10,70 30,100 20,30 50,60 90,70 40,20 90,30 140,30 90,0 160,-20 210,-60 40,-40 70,-90 70,-160l-150 -10c0,40 -20,70 -40,80 -20,20 -50,30 -90,30 -40,0 -70,-10 -100,-30 -10,-10 -20,-20 -20,-40 0,-20 10,-30 20,-50 20,-10 60,-30 130,-40 70,-20 130,-40 160,-50 30,-20 60,-50 80,-80 20,-30 30,-70 30,-110 0,-40 -10,-80 -40,-120 -20,-30 -50,-60 -90,-80 -40,-10 -100,-20 -160,-20 -90,0 -160,20 -210,60 -50,40 -70,100 -80,180z"/></glyph>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Arial";src:url("#FontID0") format(svg)}
+    .str0 {stroke:#1F1A17;stroke-width:4;stroke-linejoin:round}
+    .fil2 {fill:none}
+    .fil3 {fill:#1F1A17}
+    .fil1 {fill:#969594}
+    .fil0 {fill:#FAFBFB}
+    .fil5 {fill:#44A1CD}
+    .fil4 {fill:#D2DFE7}
+    .fnt2 {font-weight:bold;font-size:100;font-family:Arial}
+    .fnt1 {font-weight:normal;font-size:150;font-family:Arial}
+    .fnt0 {font-weight:bold;font-size:200;font-family:Arial}
+   ]]>
+  </style>
+ </defs>
+ <g id="Ebene 1">
+  <g>
+   <path class="fil0 str0" d="M1102 654l361 656 -45 108 -108 -45 -208 -719z"/>
+   <path class="fil0 str0" d="M1734 2182l-208 -719 -108 -45 -45 108 361 656z"/>
+   <path class="fil0 str0" d="M654 1734l656 -361 108 45 -45 108 -719 208z"/>
+   <path class="fil0 str0" d="M2182 1102l-719 208 -45 108 108 45 656 -361z"/>
+   <path class="fil1 str0" d="M1418 1418l316 764 -208 -719 -108 -45z"/>
+   <path class="fil1 str0" d="M1418 1418l764 -316 -656 361 -108 -45z"/>
+   <path class="fil2 str0" d="M1418 1418l120 50"/>
+   <path class="fil1 str0" d="M1418 1418l-316 -764 361 656 -45 108z"/>
+   <path class="fil1 str0" d="M1418 1418l-764 316 719 -208 45 -108z"/>
+  </g>
+  <g>
+   <path class="fil0 str0" d="M654 1102l719 208 45 108 -108 45 -656 -361z"/>
+   <path class="fil0 str0" d="M2182 1734l-656 -361 -108 45 45 108 719 208z"/>
+   <path class="fil0 str0" d="M1102 2182l208 -719 108 -45 45 108 -361 656z"/>
+   <path class="fil0 str0" d="M1734 654l-361 656 45 108 108 -45 208 -719z"/>
+   <path class="fil1 str0" d="M1418 1418l764 316 -656 -361 -108 45z"/>
+   <path class="fil1 str0" d="M1418 1418l316 -764 -208 719 -108 45z"/>
+   <path class="fil2 str0" d="M1418 1418l120 -50"/>
+   <path class="fil1 str0" d="M1418 1418l-764 -316 719 208 45 108z"/>
+   <path class="fil1 str0" d="M1418 1418l-316 764 361 -656 -45 -108z"/>
+  </g>
+  <g>
+   <path class="fil0 str0" d="M2086 750l-534 668 -134 0 0 -134 668 -534z"/>
+   <path class="fil0 str0" d="M750 2086l668 -534 0 -134 -134 0 -534 668z"/>
+   <path class="fil0 str0" d="M750 750l668 534 0 134 -134 0 -534 -668z"/>
+   <path class="fil0 str0" d="M2086 2086l-534 -668 -134 0 0 134 668 534z"/>
+   <path class="fil1 str0" d="M1418 1418l-668 668 668 -534 0 -134z"/>
+   <path class="fil1 str0" d="M1418 1418l668 668 -668 -534 0 -134z"/>
+   <path class="fil1 str0" d="M1418 1418l668 -668 -534 668 -134 0z"/>
+   <path class="fil1 str0" d="M1418 1418l-668 -668 534 668 134 0z"/>
+  </g>
+  <path class="fil2 str0" d="M1405 1421l0 148"/>
+  <path class="fil0 str0" d="M1418 355l106 957 -106 106 -106 -106 106 -957z"/>
+  <path class="fil0 str0" d="M1418 2481l106 -957 -106 -106 -106 106 106 957z"/>
+  <path class="fil0 str0" d="M355 1418l957 -106 106 106 -106 106 -957 -106z"/>
+  <path class="fil0 str0" d="M2481 1418l-957 -106 -106 106 106 106 957 -106z"/>
+  <path class="fil1 str0" d="M1418 1418l0 1063 106 -957 -106 -106z"/>
+  <path class="fil1 str0" d="M1418 1418l1063 0 -957 106 -106 -106z"/>
+  <path class="fil2 str0" d="M1418 1418l118 118"/>
+  <path class="fil1 str0" d="M1418 1418l0 -1063 106 957 -106 106z"/>
+  <path class="fil1 str0" d="M1418 1418l-1063 0 957 106 106 -106z"/>
+  <text x="1354" y="285" class="fil3 fnt0">N</text>
+  <text x="2561" y="1490" class="fil3 fnt0">O</text>
+  <text x="1356" y="2694" class="fil3 fnt0">S</text>
+  <text x="107" y="1490" class="fil3 fnt0">W</text>
+  <text x="2139" y="2239" class="fil3 fnt1">SO</text>
+  <text x="470" y="2239" class="fil3 fnt1">SW</text>
+  <text x="2135" y="704" class="fil3 fnt1">NO</text>
+  <text x="466" y="704" class="fil3 fnt1">NW</text>
+  <text x="873" y="501" class="fil3 fnt2">NNW</text>
+  <text x="1734" y="501" class="fil3 fnt2">NNO</text>
+  <text x="2227" y="1064" class="fil3 fnt2">ONO</text>
+  <text x="2227" y="1844" class="fil3 fnt2">OSO</text>
+  <text x="1740" y="2406" class="fil3 fnt2">SSO</text>
+  <text x="879" y="2406" class="fil3 fnt2">SSW</text>
+  <text x="369" y="1844" class="fil3 fnt2">WSW</text>
+  <text x="366" y="1064" class="fil3 fnt2">WNW</text>
+  <path class="fil4 str0" d="M1418 355l106 957 -106 106 -106 -106 106 -957z"/>
+  <path class="fil5 str0" d="M1418 1418l0 -1063 106 957 -106 106z"/>
+ </g>
+</svg>

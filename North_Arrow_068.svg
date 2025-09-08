@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="71.136002"
+   height="70.559998"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.2 r9819"
+   sodipodi:docname="esri_¹.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.7675795"
+     inkscape:cx="42.091806"
+     inkscape:cy="12.64527"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1366"
+     inkscape:window-height="744"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-714.47811,-67.221724)">
+    <g
+       id="g3199">
+      <g
+         id="text3192"
+         style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial">
+        <path
+           sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccc"
+           inkscape:connector-curvature="0"
+           id="path3197"
+           style="font-family:ESRI North;-inkscape-font-specification:ESRI North"
+           d="m 746.30211,120.35772 c -3.36005,-0.86396 -6.28804,-2.54396 -8.784,-5.04 -2.49604,-2.59196 -4.12804,-5.56795 -4.896,-8.928 l -18.144,-3.888 18.144,-4.319996 c 0.76796,-3.359942 2.39996,-6.23994 4.896,-8.64 2.49596,-2.495935 5.42395,-4.127933 8.784,-4.896 l 4.032,-17.424 3.888,17.28 c 3.55194,0.768067 6.62394,2.400065 9.216,4.896 2.59193,2.49606 4.27193,5.472057 5.04,8.928 l 17.136,4.175996 -17.136,3.744 c -0.76807,3.55205 -2.44807,6.62404 -5.04,9.216 -2.49606,2.59204 -5.52006,4.27204 -9.072,5.04 l -4.032,17.28 -4.032,-17.424 m -11.232,-18 c -4e-5,2.11205 0.43196,4.12805 1.296,6.048 0.86396,1.82405 2.01596,3.45604 3.456,4.896 1.43996,1.44004 3.07195,2.59204 4.896,3.456 1.91995,0.76804 3.93595,1.15204 6.048,1.152 2.01594,4e-5 3.93594,-0.38396 5.76,-1.152 1.82394,-0.86396 3.45594,-2.01596 4.896,-3.456 1.43993,-1.43996 2.54393,-3.07195 3.312,-4.896 0.86393,-1.91995 1.29593,-3.93595 1.296,-6.048 -7e-5,-2.01594 -0.43207,-3.935942 -1.296,-5.759996 -0.76807,-1.919942 -1.87207,-3.599941 -3.312,-5.04 -1.44006,-1.439938 -3.12006,-2.591937 -5.04,-3.456 -1.82406,-0.863935 -3.74406,-1.295934 -5.76,-1.296 -2.11205,6.6e-5 -4.12805,0.432065 -6.048,1.296 -1.82405,0.864063 -3.45604,2.016062 -4.896,3.456 -1.44004,1.440059 -2.59204,3.120058 -3.456,5.04 -0.76804,1.824054 -1.15204,3.744056 -1.152,5.759996 m -2.88,0.144 c -4e-5,-0.47995 -4e-5,-0.95995 0,-1.44 -4e-5,-0.57594 0.048,-1.103944 0.144,-1.583996 l -13.104,3.023996 12.96,0 m 18.144,18.288 c -0.48005,4e-5 -0.91205,4e-5 -1.296,0 -0.38405,4e-5 -0.81605,-0.048 -1.296,-0.144 l 2.592,12.384 0,-12.24 m 2.448,-36.575996 -2.448,-12.24 0,12.096 2.448,0.144 m 15.984,20.591996 12.096,-2.304 -11.952,0 -0.144,2.304" />
+      </g>
+    </g>
+  </g>
+</svg>
