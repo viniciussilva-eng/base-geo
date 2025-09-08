@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600">
+	<title>Heraldic Maltese Cross</title>
+	<desc>Heraldic Maltese Cross</desc>
+	<rect width="600" height="600" fill="#fff"/>
+	<path d="M 20,420 L 290,310 L 180,580 L 300,500 L 420,580 L 310,310 L 580,420 L 500,300 L 580,180 L 310,290 L 420,20 L 300,100 L 180,20 L 290,290 L 20,180 L 100,300 z"/>
+</svg>

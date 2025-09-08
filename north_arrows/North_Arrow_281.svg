@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="63.792"
+   height="109.44"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.2 r9819"
+   sodipodi:docname="esri_E.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.8694444"
+     inkscape:cx="14.036533"
+     inkscape:cy="25.17712"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1366"
+     inkscape:window-height="744"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-180.77959,221.47583)">
+    <g
+       id="g3977">
+      <g
+         id="text3963"
+         style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         transform="translate(155.71139,-195.37388)">
+        <path
+           sodipodi:nodetypes="ccccccccccccccscccccccccccscssc"
+           inkscape:connector-curvature="0"
+           id="path3968"
+           style="font-family:ESRI North;-inkscape-font-specification:ESRI North"
+           d="m 88.860197,-4.7899492 -4.464,4.03200004 -23.328,-12.67199984 0,20.1599998 c 3.83996,0.5760761 7.343957,1.632075 10.512,3.168 3.167951,1.5360722 5.855948,3.4560702 8.064,5.7600002 2.207943,2.208065 3.935942,4.800063 5.184,7.776 1.247939,2.880057 1.871939,5.952054 1.872,9.216 -6.1e-5,6.624044 -2.256059,12.240038 -6.768,16.848 -4.41605,4.608029 -10.704044,7.680026 -18.864,9.216 l 0,24.624 -8.352,0 0,-24.624 c -8.160019,-1.439974 -14.496013,-4.463971 -19.008,-9.072 -4.512004,-4.703962 -6.768002,-10.367956 -6.768,-16.992 -2e-6,-6.911943 2.351996,-12.671937 7.056,-17.28 4.895986,-4.703927 11.18398,-7.5839246 18.864,-8.6400002 l 0,-20.1599998 -23.328,12.67199984 -4.464,-4.03200004 31.824,-21.3119998 31.968,21.3119998 m -8.928,37.4400002 c -5.5e-5,-5.663944 -2.208052,-10.415939 -6.624,-14.256 -4.512043,-3.935931 -9.984038,-5.903929 -16.416,-5.904 -6.528025,7.1e-5 -12.04802,1.968069 -16.56,5.904 -4.512011,3.744061 -6.768008,8.496056 -6.768,14.256 -8e-6,5.760045 2.255989,10.51204 6.768,14.256 4.60798,4.032032 10.127975,6.04803 16.56,6.048 6.335962,3e-5 11.759957,-1.967968 16.272,-5.904 4.511948,-3.93596 6.767945,-8.735955 6.768,-14.4" />
+      </g>
+      <g
+         id="text3970"
+         style="font-size:305.88546753px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         transform="matrix(1.0855843,0,0,0.92116292,-60,0)">
+        <path
+           inkscape:connector-curvature="0"
+           id="path3975"
+           style="font-size:42.48409271px"
+           d="m 238.43647,-160.34064 0,-30.41097 4.12809,0 15.97303,23.87655 0,-23.87655 3.85842,0 0,30.41097 -4.1281,0 -15.97302,-23.8973 0,23.8973 -3.85842,0" />
+      </g>
+    </g>
+  </g>
+</svg>

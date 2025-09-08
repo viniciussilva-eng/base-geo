@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="97.027328mm"
+   height="97.998817mm"
+   viewBox="0 0 97.027329 97.998818"
+   version="1.1"
+   id="svg845"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="esri_north_047_b.svg">
+  <defs
+     id="defs839" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.97458821"
+     inkscape:cx="64.479388"
+     inkscape:cy="190.90916"
+     inkscape:document-units="mm"
+     inkscape:current-layer="text1587"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="745"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <metadata
+     id="metadata842">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-0.38185358,-198.99978)">
+    <g
+       aria-label="2"
+       style="font-style:normal;font-weight:normal;font-size:124.42774963px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5.18448925"
+       id="text1587">
+      <g
+         aria-label="/"
+         style="font-style:normal;font-weight:normal;font-size:121.43595123px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:26.23264313"
+         id="text1792">
+        <path
+           d="m 84.294096,247.57416 -25.015806,6.67898 -6.800413,24.77294 -6.678978,-24.77294 -25.258678,-6.67898 25.258678,-6.67897 6.678978,-25.01581 6.800413,25.01581 z m -65.08967,-8.1362 -3.88595,14.57231 H 13.132628 L 10.218166,242.9596 q -0.2428723,-1.45723 -0.3643082,-1.82154 -0.121436,0.60718 -0.2428719,1.09292 -0.121436,0.48575 -0.2428719,0.72862 L 6.3322152,254.01027 H 4.38924 L 0.38185358,239.43796 H 2.3248288 l 2.9144628,12.5079 q 0.2428719,-1.09293 0.4857438,-1.70011 0.2428719,-0.60717 0.3643079,-0.85005 l 2.550155,-9.95774 h 2.5501547 l 1.942975,7.40759 q 0.364308,1.33579 0.60718,2.67159 0.242872,1.33579 0.485744,2.42872 0.242872,-0.72862 0.364308,-1.45723 0.121436,-0.72862 0.364308,-1.70011 l 2.307283,-9.35056 z M 57.213879,213.5721 h -2.185847 l -7.407593,-11.29355 v 11.29355 h -1.82154 v -14.57232 h 1.942976 l 7.650464,11.53642 v -11.53642 h 1.82154 z m 23.07283,34.00206 h -27.56596 l 5.707489,5.95037 z M 52.356441,274.29007 V 247.6956 l -5.828926,6.0718 z m 5.828925,-32.7877 -5.586053,-20.76555 v 26.3516 z m -6.193233,5.70749 -5.586054,-5.58606 -20.886984,5.58606 z m 45.417046,6.92185 h -10.8078 v -14.57232 h 10.443492 v 1.7001 h -8.500517 v 4.49313 h 8.014773 v 1.70011 h -8.014773 v 4.85744 h 8.864825 z m -40.073864,32.18052 h -1.82154 q -0.728615,-2.67159 -3.521642,-2.67159 -1.821539,0 -2.550155,0.72862 -0.728616,0.72861 -0.728616,1.57866 0,0.72862 0.485744,1.21436 0.242872,0.24288 0.971488,0.48575 0.850051,0.24287 1.821539,0.48574 0.971487,0.24287 1.821539,0.60718 0.971488,0.24287 1.335796,0.48575 2.550155,0.97148 2.550155,3.52164 0,1.7001 -1.457232,3.0359 -1.457231,1.21436 -3.88595,1.21436 -2.793027,0 -4.49313,-1.21436 -1.578668,-1.3358 -1.578668,-4.00739 h 1.942975 q 0.364308,3.52164 4.128823,3.52164 1.457231,0 2.428719,-0.72861 1.092923,-0.85005 1.092923,-1.82154 0,-1.3358 -1.821539,-1.94298 -0.242872,-0.12143 -0.971488,-0.24287 -0.728615,-0.24287 -1.578667,-0.36431 -0.850052,-0.24287 -1.578667,-0.48574 -0.728616,-0.24287 -1.092924,-0.48574 -2.064411,-1.21436 -2.064411,-3.15734 0,-1.82154 1.335795,-2.91446 1.335796,-1.21436 3.764515,-1.21436 2.428719,0 3.764514,1.21436 1.457232,1.21436 1.700104,3.15733 z"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'ESRI North';-inkscape-font-specification:'ESRI North, ';stroke-width:26.23264313"
+           id="path4568"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+  </g>
+</svg>

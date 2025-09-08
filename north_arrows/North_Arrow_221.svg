@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="12.162934mm"
+   height="97.664749mm"
+   viewBox="0 0 12.162934 97.664749"
+   version="1.1"
+   id="svg845"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="esri_north_060_b.svg">
+  <defs
+     id="defs839" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.97458821"
+     inkscape:cx="-5.0997871"
+     inkscape:cy="207.5365"
+     inkscape:document-units="mm"
+     inkscape:current-layer="text1587"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="745"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <metadata
+     id="metadata842">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-3.6396399,-199.33385)">
+    <g
+       aria-label="2"
+       style="font-style:normal;font-weight:normal;font-size:124.42774963px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5.18448925"
+       id="text1587">
+      <g
+         aria-label="t"
+         style="font-style:normal;font-weight:normal;font-size:120.42508698px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:26.0142746"
+         id="text1792">
+        <path
+           d="m 15.802574,251.47791 q 0,2.28808 -1.685952,4.33531 -1.806376,1.4451 -3.974027,1.68595 v 12.16293 l 2.769777,3.97403 v 23.36247 l -3.6127531,-4.21488 v -35.28455 q -1.9268013,0 -3.9740278,-1.68595 -1.6859512,-2.04723 -1.6859512,-4.33531 0,-2.4085 1.6859512,-4.45572 1.6859512,-1.56553 3.9740278,-1.68596 v -10.83825 l -4.4557282,3.73317 5.2987043,-27.57734 v 34.68242 q 2.288076,0.12043 3.974027,1.68596 1.685952,2.04722 1.685952,4.45572 z m -0.481701,0 q 0,-2.16765 -1.565526,-4.09445 -1.926801,-1.56553 -4.0944528,-1.56553 -2.0472265,0 -3.9740279,1.56553 -1.5655261,1.9268 -1.5655261,4.09445 0,2.40851 1.5655261,3.97403 1.9268014,1.56553 3.9740279,1.56553 2.1676518,0 4.0944528,-1.56553 1.565526,-1.56552 1.565526,-3.97403 z m -0.72255,-42.14878 -8.5501814,-4.57615 v 4.21488 l -0.9634007,-1.08383 v -8.55018 l 8.5501811,4.817 v -4.57615 l 0.963401,1.08383 z"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'ESRI North';-inkscape-font-specification:'ESRI North, ';stroke-width:26.0142746"
+           id="path1363"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Creator: CorelDRAW -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xml:space="preserve"
+   width="6.9919939in"
+   height="7.0429783in"
+   style="clip-rule:evenodd;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
+   viewBox="0 0 6.9919939 7.0429783"
+   version="1.1"
+   id="svg14"
+   sodipodi:docname="North_Arrow_280.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"><metadata
+   id="metadata18"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1366"
+   inkscape:window-height="745"
+   id="namedview16"
+   showgrid="false"
+   fit-margin-top="0"
+   fit-margin-left="0"
+   fit-margin-right="0"
+   fit-margin-bottom="0"
+   inkscape:zoom="0.22348485"
+   inkscape:cx="339.00392"
+   inkscape:cy="213.87543"
+   inkscape:window-x="0"
+   inkscape:window-y="23"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg14" />
+ <defs
+   id="defs4">
+  <style
+   type="text/css"
+   id="style2">
+   <![CDATA[
+    .str0 {stroke:black;stroke-width:0.00694488}
+    .fil0 {fill:yellow}
+   ]]>
+  </style>
+ </defs>
+ <g
+   id="Layer_x0020_1"
+   transform="translate(-0.7187092,-0.68489065)">
+  <metadata
+   id="CorelCorpID_0Corel-Layer" />
+  <g
+   id="_133320256">
+   <path
+   id="_133319752"
+   class="fil0 str0"
+   d="M 3.72551,3.49086 V 3.339651 L 2.66708,2.558431 2.515875,2.4828326 c 0.058732,0.111 0.86348,1.23483 0.882024,1.23483 0.397256,0 0.241665,-0.047689 0.32761,-0.226803 z"
+   inkscape:connector-curvature="0"
+   style="fill:#ffff00;stroke:#000000;stroke-width:0.00694488" />
+   <path
+   id="_133321936"
+   class="fil0 str0"
+   d="M 4.00272,2.05441 3.750708,3.51606 3.725511,3.742863 3.648834,3.736153 0.726614,4.19648 c 0.0682165,0.059295 1.25702,0.230886 1.4717,0.267154 0.176445,0.029803 1.47962,0.224 1.51822,0.245843 0.009,0.00509 0.487791,2.78358 0.504488,3.01784 L 4.709561,4.708187 7.707231,4.246888 V 4.196486 c -0.460043,0 -1.05645,-0.188992 -1.51131,-0.227547 C 6.017626,3.953821 5.636086,3.881848 5.44111,3.841722 5.325968,3.818025 4.737874,3.757927 4.711516,3.689285 4.619335,3.449238 4.528878,2.530355 4.471469,2.190485 4.434851,1.973698 4.257634,0.770305 4.216048,0.695405 l -0.213335,1.35902 z"
+   inkscape:connector-curvature="0"
+   style="fill:#ffff00;stroke:#000000;stroke-width:0.00694488" />
+   <polygon
+   id="_133320544"
+   class="fil0 str0"
+   points="5.05487,3.71306 5.91307,2.5011 4.71573,3.35007 4.75947,3.68604 "
+   style="fill:#ffff00;stroke:#000000;stroke-width:0.00694488" />
+   <path
+   id="_133322104"
+   class="fil0 str0"
+   d="M 2.46655,5.91093 3.72551,5.028107 C 3.6665376,4.905213 3.7519667,4.790131 3.6467344,4.754079 3.5644746,4.7258979 3.4353134,4.7426302 3.3525104,4.7041774 l -0.885965,1.20675 z"
+   inkscape:connector-curvature="0"
+   style="fill:#ffff00;stroke:#000000;stroke-width:0.00694488" />
+   <polygon
+   id="_133320760"
+   class="fil0 str0"
+   points="5.93061,5.92633 5.0616,4.70322 4.75892,4.75196 4.6985,5.04153 "
+   style="fill:#ffff00;stroke:#000000;stroke-width:0.00694488" />
+  </g>
+ </g>
+</svg>

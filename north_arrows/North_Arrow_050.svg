@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" height="2835" width="2835" version="1.1">
+  <defs>
+    <radialGradient id="a" gradientUnits="userSpaceOnUse" cy="1418" cx="1418" r="1065">
+      <stop stop-color="#5359b1" offset="0"/>
+      <stop stop-color="#4a85d3" stop-opacity=".36458334" offset=".63636363"/>
+      <stop stop-color="#63b6d1" stop-opacity="0" offset="1"/>
+    </radialGradient>
+    <linearGradient id="c" y2="352.99988" gradientUnits="userSpaceOnUse" y1="1415.9645" x2="1417.4907" x1="1417.4907">
+      <stop stop-color="#ffe165" offset="0"/>
+      <stop stop-color="#f60" offset=".32727271"/>
+      <stop stop-color="#bf0000" offset="1"/>
+    </linearGradient>
+    <linearGradient id="b" y2="352.69614" gradientUnits="userSpaceOnUse" y1="1418.5093" x2="1460.7534" x1="1460.7534">
+      <stop stop-color="#806600" offset="0"/>
+      <stop stop-color="#693603" offset=".21818182"/>
+      <stop stop-color="#530707" offset="1"/>
+    </linearGradient>
+  </defs>
+  <g transform="rotate(180)">
+    <g transform="matrix(.9 0 0 .9 -2693.7 -2693.7)">
+      <circle d="m 2483,1418 c 0,588.1833 -476.8167,1065 -1065,1065 C 829.81674,2483 353,2006.1833 353,1418 353,829.81674 829.81674,353 1418,353 c 588.1833,0 1065,476.81674 1065,1065 z" cy="1418" cx="1418" r="1065" fill="url(#a)"/>
+      <g stroke-linejoin="round" stroke-width="4" stroke="#1f1a17">
+        <g>
+          <g fill="#fd5">
+            <path d="m1102 654 361 656-45 108-108-45-208-719z"/>
+            <path d="m1734 2182-208-719-108-45-45 108 361 656z"/>
+            <path d="m654 1734 656-361 108 45-45 108-719 208z"/>
+            <path d="m2182 1102-719 208-45 108 108 45 656-361z"/>
+          </g>
+          <g fill="#a80">
+            <path d="m1418 1418 316 764-208-719-108-45z"/>
+            <path d="m1418 1418 764-316-656 361-108-45z"/>
+            <path d="m1418 1418-316-764 361 656-45 108z"/>
+            <path d="m1418 1418-764 316 719-208 45-108z"/>
+          </g>
+        </g>
+        <g>
+          <g fill="#fd5">
+            <path d="m654 1102 719 208 45 108-108 45-656-361z"/>
+            <path d="m2182 1734-656-361-108 45 45 108 719 208z"/>
+            <path d="m1102 2182 208-719 108-45 45 108-361 656z"/>
+            <path d="m1734 654-361 656 45 108 108-45 208-719z"/>
+          </g>
+          <g fill="#a80">
+            <path d="m1418 1418 764 316-656-361-108 45z"/>
+            <path d="m1418 1418 316-764-208 719-108 45z"/>
+            <path d="m1418 1418-764-316 719 208 45 108z"/>
+            <path d="m1418 1418-316 764 361-656-45-108z"/>
+          </g>
+        </g>
+        <g>
+          <g fill="#fd5">
+            <path d="m2086 750-534 668h-134v-134l668-534z"/>
+            <path d="m750 2086 668-534v-134h-134l-534 668z"/>
+            <path d="m750 750 668 534v134h-134l-534-668z"/>
+            <path d="m2086 2086-534-668h-134v134l668 534z"/>
+          </g>
+          <g>
+            <path fill="#806600" d="m1418 1418-668 668 668-534v-134z"/>
+            <path fill="#a80" d="m1418 1418 668 668-668-534v-134z"/>
+            <path fill="#806600" d="m1418 1418 668-668-534 668h-134z"/>
+            <path fill="#a80" d="m1418 1418-668-668 534 668h134z"/>
+          </g>
+        </g>
+        <g>
+          <path fill="url(#c)" d="m1418 355 106 957-106 106-106-106 106-957z"/>
+          <path fill="#f5ff5d" d="m355 1418 957-106 106 106-106 106-957-106z"/>
+          <path fill="#fd5" d="m2481 1418-957-106-106 106 106 106 957-106z"/>
+          <path fill="#806600" d="m1418 1418h1063l-957 106-106-106z"/>
+          <path fill="url(#b)" d="m1418 1418v-1063l106 957-106 106z"/>
+          <path fill="#806600" d="m1418 1418h-1063l957 106 106-106z"/>
+          <path fill="#786721" d="m1418 2481-106-957 106-106 106 106-106 957z"/>
+          <path fill="#fd5" d="m1418 1418v1063l-106-957 106-106z"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g style="text-anchor:middle;text-align:center" font-weight="bold" font-size="450px" font-family="Arial">
+    <text y="2760.5596" x="1418.9282" fill="#ff0000">N</text>
+    <text y="396.44971" x="1420.5762">S</text>
+    <text y="1578.5596" x="2598.8408">W</text>
+    <text y="1578.5596" x="230.55611">E</text>
+  </g>
+</svg>

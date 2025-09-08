@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="138.89999"
+   height="239.36"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="Seta_Norte_v01_svg.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.1411233"
+     inkscape:cx="103.9957"
+     inkscape:cy="121.89591"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     guidecolor="#0000ff"
+     guideopacity="1"
+     guidetolerance="1"
+     objecttolerance="10000"
+     gridtolerance="1"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-394.49271,-590.65413)">
+    <path
+       inkscape:connector-curvature="0"
+       id="path4681"
+       d="m 848.2903,853.81405 0,0 0,0 0,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4683"
+       d="m 848.2903,853.81405 0,0 c 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 l 0,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <g
+       id="g5520">
+      <g
+         transform="translate(-69.782132,27.425055)"
+         id="g4974">
+        <g
+           id="g4967">
+          <g
+             id="g4961">
+            <g
+               id="g4927"
+               transform="translate(135.95506,9.9353452)">
+              <path
+                 sodipodi:nodetypes="ccscccc"
+                 inkscape:connector-curvature="0"
+                 id="path4951"
+                 d="M 332.1016,745.66564 396.63937,558.2274 c 0,-0.44229 0.71181,-0.80416 1.58181,-0.80416 0.86999,0 1.5818,0.36093 1.5818,0.80207 l 64.28535,187.42186 -65.86651,-57.09206 z"
+                 style="fill:#000000;stroke:#000000" />
+              <path
+                 sodipodi:nodetypes="ccccc"
+                 style="fill:#ffffff"
+                 d="m 397.21017,685.88402 0.22796,-110.52431 0,-11.06429 -60.47472,174.43698 z"
+                 id="path4931"
+                 inkscape:connector-curvature="0" />
+            </g>
+          </g>
+        </g>
+      </g>
+      <g
+         id="text4990"
+         style="font-size:72px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans">
+        <path
+           id="path5518"
+           style="-inkscape-font-specification:Sans"
+           d="m 445.45154,827.05737 0,-51.53906 6.99609,0 27.07031,40.46484 0,-40.46484 6.53907,0 0,51.53906 -6.9961,0 -27.07031,-40.5 0,40.5 z" />
+      </g>
+    </g>
+  </g>
+</svg>
