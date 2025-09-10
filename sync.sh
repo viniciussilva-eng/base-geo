@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # ====================================================================
-# Script de Sincronização com GitHub v5.0 (Interativo e Robusto)
+# Script de Sincronização com GitHub v5.1 (Interativo e Robusto)
 #
 # Resolve automaticamente "unstaged changes" antes do pull.
 # Detecta e oferece correção para novos submódulos.
-# Logs detalhados em português para melhor compreensão.
+# Envia objetos LFS ANTES do push principal para evitar erros.
 #
 # Uso:
 #   ./sync.sh        -> Executa o modo de sincronização padrão e seguro.
@@ -31,7 +31,7 @@ log() {
 
 # --- Início do Script ---
 log "${BLUE}============================================${NC}"
-log "${BLUE}  INICIANDO SCRIPT DE SINCRONIZAÇÃO v5.0      ${NC}"
+log "${BLUE}  INICIANDO SCRIPT DE SINCRONIZAÇÃO v5.1      ${NC}"
 log "${BLUE}============================================${NC}"
 
 PROJETO_DIR=$(pwd)
@@ -62,6 +62,10 @@ if [[ "$1" == "force" ]]; then
     git add .
     log "${BLUE}✏️  Criando commit de espelhamento...${NC}"
     git commit -m "refactor(force): Sincronização forçada para espelhar estado local em $(date +"%Y-%m-%d %H:%M")" || true
+    
+    # MODO FORÇADO: Ordem correta de push
+    log "${BLUE}📤 Enviando arquivos grandes via Git LFS (se houver)...${NC}"
+    git lfs push --all origin main
     log "${RED}🚀 Executando PUSH FORÇADO para 'main'...${NC}"
     git push --force origin main
 
@@ -69,7 +73,6 @@ else
     # ==================== MODO PADRÃO (SEGURO) ====================
     log "${GREEN}▶️  Executando em modo de sincronização padrão (seguro).${NC}"
 
-    # ===== NOVA ROTINA: VERIFICAÇÃO DE ALTERAÇÕES LOCAIS (STASH AUTOMÁTICO) =====
     log "${YELLOW}🔍 Verificando o estado do diretório de trabalho...${NC}"
     STASH_APPLIED=false
     if [ -n "$(git status --porcelain)" ]; then
@@ -80,15 +83,13 @@ else
     else
         log "${GREEN}✅ Diretório de trabalho está limpo. Nenhuma alteração local para guardar.${NC}"
     fi
-    # ==========================================================================
-
+    
     log "${BLUE}🔄 Sincronizando com o repositório remoto (pull --rebase)...${NC}"
     git pull --rebase origin main
 
     log "${BLUE}🔄 Atualizando submódulos (se houver) com as versões remotas...${NC}"
     git submodule update --remote --merge
 
-    # ===== RESTAURAÇÃO DAS ALTERAÇÕES LOCAIS (STASH POP) =====
     if [ "$STASH_APPLIED" = true ]; then
         log "${BLUE}🔄 Restaurando suas alterações locais que foram guardadas...${NC}"
         if git stash pop; then
@@ -100,8 +101,7 @@ else
             exit 1
         fi
     fi
-    # =========================================================
-
+    
     log "${YELLOW}🔍 Detectando arquivos grandes (>50MB) para Git LFS...${NC}"
     find . -type f -size +50M -not -path "./.git/*" -print0 | while IFS= read -r -d '' file; do
         if ! git lfs ls-files | grep -qF "./${file#./}"; then
@@ -138,13 +138,16 @@ else
     log "${BLUE}✏️  Criando commit com as alterações locais...${NC}"
     git commit -m "feat(auto): Sincronização de arquivos em $(date +"%Y-%m-%d %H:%M")"
 
+    # ==================== ORDEM DE PUSH CORRIGIDA ====================
+    # 1. Envia os arquivos LFS primeiro.
+    log "${BLUE}📤 Enviando arquivos grandes via Git LFS (se houver)...${NC}"
+    git lfs push --all origin main
+
+    # 2. Envia o commit que aponta para os arquivos LFS.
     log "${GREEN}🚀 Enviando alterações para o repositório remoto (push)...${NC}"
     git push origin main
+    # ==============================================================
 fi
-
-# Envia objetos LFS, se houver
-log "${BLUE}📤 Enviando arquivos grandes via Git LFS (se houver)...${NC}"
-git lfs push --all origin main
 
 # --- RELATÓRIO FINAL ---
 log "${GREEN}============================================${NC}"
