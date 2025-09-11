@@ -1,15 +1,16 @@
 #!/bin/bash
 
 # ====================================================================
-# Script de Sincronização com GitHub v5.1 (Interativo e Robusto)
+# Script de Sincronização com GitHub v5.4 (Interativo e Robusto)
 #
 # Resolve automaticamente "unstaged changes" antes do pull.
 # Detecta e oferece correção para novos submódulos.
 # Envia objetos LFS ANTES do push principal para evitar erros.
+# Gerencia interativamente arquivos não rastreados com menu colorido.
 #
 # Uso:
-#   ./sync.sh        -> Executa o modo de sincronização padrão e seguro.
-#   ./sync.sh force  -> Executa o modo forçado (espelho local -> remoto).
+#    ./sync.sh       -> Executa o modo de sincronização padrão e seguro.
+#    ./sync.sh force -> Executa o modo forçado (espelho local -> remoto).
 # ====================================================================
 
 # --- Configuração ---
@@ -31,7 +32,7 @@ log() {
 
 # --- Início do Script ---
 log "${BLUE}============================================${NC}"
-log "${BLUE}  INICIANDO SCRIPT DE SINCRONIZAÇÃO v5.1      ${NC}"
+log "${BLUE}  INICIANDO SCRIPT DE SINCRONIZAÇÃO v5.4      ${NC}"
 log "${BLUE}============================================${NC}"
 
 PROJETO_DIR=$(pwd)
@@ -55,7 +56,7 @@ if [[ "$1" == "force" ]]; then
     log "${RED}🚨 MODO FORÇADO ATIVADO! 🚨${NC}"
     log "${YELLOW}Este modo fará o repositório remoto ser um ESPELHO EXATO da sua pasta local.${NC}"
     log "${RED}AVISO: Commits existentes no remoto que não estão no local serão perdidos.${NC}"
-    read -p "Você tem certeza que deseja continuar? (s/N): " confirm
+    read -p "Você tem certeza que deseja continuar? (s/N): " confirm < /dev/tty
     if [[ "$confirm" != "s" && "$confirm" != "S" ]]; then log "${GREEN}Operação cancelada pelo usuário.${NC}" && exit 0; fi
 
     log "${BLUE}➕ Adicionando todos os arquivos ao stage...${NC}"
@@ -63,7 +64,6 @@ if [[ "$1" == "force" ]]; then
     log "${BLUE}✏️  Criando commit de espelhamento...${NC}"
     git commit -m "refactor(force): Sincronização forçada para espelhar estado local em $(date +"%Y-%m-%d %H:%M")" || true
     
-    # MODO FORÇADO: Ordem correta de push
     log "${BLUE}📤 Enviando arquivos grandes via Git LFS (se houver)...${NC}"
     git lfs push --all origin main
     log "${RED}🚀 Executando PUSH FORÇADO para 'main'...${NC}"
@@ -79,7 +79,7 @@ else
         log "${YELLOW}⚠️  Detectadas alterações locais não salvas. Guardando-as temporariamente (git stash)...${NC}"
         git stash push -m "sync.sh: Stash automático antes da sincronização"
         STASH_APPLIED=true
-        log "${GREEN}   ✅ Alterações locais guardadas com sucesso.${NC}"
+        log "${GREEN}    ✅ Alterações locais guardadas com sucesso.${NC}"
     else
         log "${GREEN}✅ Diretório de trabalho está limpo. Nenhuma alteração local para guardar.${NC}"
     fi
@@ -93,40 +93,70 @@ else
     if [ "$STASH_APPLIED" = true ]; then
         log "${BLUE}🔄 Restaurando suas alterações locais que foram guardadas...${NC}"
         if git stash pop; then
-            log "${GREEN}   ✅ Alterações restauradas com sucesso.${NC}"
+            log "${GREEN}    ✅ Alterações restauradas com sucesso.${NC}"
         else
             log "${RED}🚨 CONFLITO AO RESTAURAR! 🚨 Não foi possível reaplicar suas alterações automaticamente.${NC}"
-            log "${YELLOW}   -> Suas alterações ainda estão salvas no stash. Resolva os conflitos indicados nos arquivos.${NC}"
-            log "${YELLOW}   -> Após resolver, finalize o processo ou, se preferir, use 'git stash drop' para descartar as alterações guardadas.${NC}"
+            log "${YELLOW}    -> Suas alterações ainda estão salvas no stash. Resolva os conflitos indicados nos arquivos.${NC}"
+            log "${YELLOW}    -> Após resolver, finalize o processo ou, se preferir, use 'git stash drop' para descartar as alterações guardadas.${NC}"
             exit 1
         fi
     fi
-    
-    log "${YELLOW}🔍 Detectando arquivos grandes (>50MB) para Git LFS...${NC}"
-    find . -type f -size +50M -not -path "./.git/*" -print0 | while IFS= read -r -d '' file; do
-        if ! git lfs ls-files | grep -qF "./${file#./}"; then
-            log "${GREEN}   + LFS: Rastreando novo arquivo grande: ${file#./}${NC}"
-            git lfs track "${file#./}"
-            git add .gitattributes
-        fi
+
+    # ==============================================================================
+    # 🌟 SEÇÃO INTERATIVA CORRIGIDA (Cores e Leitura de Input) 🌟
+    # ==============================================================================
+    log "${YELLOW}🔍 Verificando arquivos e diretórios não rastreados...${NC}"
+    git ls-files --others --exclude-standard | while read -r untracked_path; do
+        log "${YELLOW}❓ Encontrado item não rastreado: '${untracked_path}'. O que fazer?${NC}"
+        
+        # CORREÇÃO APLICADA: Adicionado '-e' para interpretar as cores
+        echo -e "   1. ${RED}Ignorar permanentemente${NC} (adicionar ao .gitignore)"
+        echo -e "   2. ${BLUE}Rastrear com Git LFS${NC} (para dados e arquivos grandes)"
+        echo -e "   3. ${GREEN}Rastrear com Git Normal${NC} (para código-fonte e arquivos pequenos)"
+        echo -e "   4. Pular (ignorar por agora, não fazer nada)"
+        
+        read -p "   Sua escolha [1-4, padrão=4]: " choice < /dev/tty
+
+        case "${choice:-4}" in
+            1)
+                log "   -> Adicionando '${untracked_path}' ao .gitignore..."
+                [[ -n $(tail -c1 .gitignore 2>/dev/null) ]] && echo "" >> .gitignore
+                echo "${untracked_path}" >> .gitignore
+                git add .gitignore
+                log "${GREEN}   ✅ '${untracked_path}' adicionado ao .gitignore e pronto para commit.${NC}"
+                ;;
+            2)
+                log "   -> Rastreando '${untracked_path}' com Git LFS..."
+                git lfs track "${untracked_path}"
+                git add .gitattributes
+                git add "${untracked_path}"
+                log "${GREEN}   ✅ '${untracked_path}' agora é rastreado pelo LFS e está pronto para commit.${NC}"
+                ;;
+            3)
+                log "   -> Rastreando '${untracked_path}' com Git normal..."
+                git add "${untracked_path}"
+                log "${GREEN}   ✅ '${untracked_path}' adicionado normalmente e está pronto para commit.${NC}"
+                ;;
+            *)
+                log "${YELLOW}   -> '${untracked_path}' será ignorado nesta sincronização.${NC}"
+                ;;
+        esac
+        echo "" 
     done
+    # ==============================================================================
 
     git add .
 
     log "${YELLOW}🔍 Verificando se novas pastas foram adicionadas como submódulos...${NC}"
-    git diff --cached --raw | grep -E '160000 A' | cut -d'	' -f2 | while read -r submodule_path; do
-        log "${YELLOW}⚠️  SUBMÓDULO DETECTADO: A pasta '${submodule_path}' foi adicionada incorretamente (contém uma pasta .git).${NC}"
-        read -p "   -> Deseja convertê-la em uma pasta comum, adicionando seus arquivos ao projeto principal? (S/n): " choice
+    git diff --cached --raw | grep -E '160000 A' | cut -d' ' -f2 | while read -r submodule_path; do
+        log "${YELLOW}⚠️  SUBMÓDULO DETECTADO: '${submodule_path}'${NC}"
+        read -p "   -> Deseja convertê-la em uma pasta comum? (S/n): " choice < /dev/tty
         choice=${choice:-S}
-
         if [[ "$choice" == "S" || "$choice" == "s" ]]; then
-            log "${GREEN}   ✅ Convertendo '${submodule_path}' para um diretório comum...${NC}"
+            log "${GREEN}   ✅ Convertendo '${submodule_path}'...${NC}"
             git rm --cached "$submodule_path"
             rm -rf "$submodule_path/.git"
             git add "$submodule_path"
-            log "${GREEN}   Conversão concluída. Os arquivos da pasta serão incluídos no commit.${NC}"
-        else
-            log "${YELLOW}   Operação cancelada. A pasta '${submodule_path}' será mantida como submódulo.${NC}"
         fi
     done
 
@@ -138,20 +168,16 @@ else
     log "${BLUE}✏️  Criando commit com as alterações locais...${NC}"
     git commit -m "feat(auto): Sincronização de arquivos em $(date +"%Y-%m-%d %H:%M")"
 
-    # ==================== ORDEM DE PUSH CORRIGIDA ====================
-    # 1. Envia os arquivos LFS primeiro.
     log "${BLUE}📤 Enviando arquivos grandes via Git LFS (se houver)...${NC}"
     git lfs push --all origin main
 
-    # 2. Envia o commit que aponta para os arquivos LFS.
     log "${GREEN}🚀 Enviando alterações para o repositório remoto (push)...${NC}"
     git push origin main
-    # ==============================================================
 fi
 
 # --- RELATÓRIO FINAL ---
 log "${GREEN}============================================${NC}"
-log "${GREEN}   SINCRONIZAÇÃO CONCLUÍDA COM SUCESSO!     ${NC}"
+log "${GREEN}    SINCRONIZAÇÃO CONCLUÍDA COM SUCESSO!      ${NC}"
 log "${GREEN}============================================${NC}"
 log "${YELLOW}Último commit enviado:${NC}"
 git log -1 --pretty=format:"%h - %s (%cr)"
