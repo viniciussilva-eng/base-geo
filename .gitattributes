@@ -13,3 +13,4 @@ shape/pontos[[:space:]]de[[:space:]]coleta.zip filter=lfs diff=lfs merge=lfs -te
 shape/BR/BR_RG_Imediatas_2024.zip filter=lfs diff=lfs merge=lfs -text
 shape/BR/BR_subdistritos_CD2022.gpkg filter=lfs diff=lfs merge=lfs -text
 shape/BR/BR_Municipios_2024.zip filter=lfs diff=lfs merge=lfs -text
+Geojson/geodata-br/ filter=lfs diff=lfs merge=lfs -text

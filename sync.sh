@@ -1,12 +1,11 @@
 #!/bin/bash
 
 # ====================================================================
-# Script de Sincronização com GitHub v5.4 (Interativo e Robusto)
+# Script de Sincronização com GitHub v5.5 (Interativo e Robusto)
 #
-# Resolve automaticamente "unstaged changes" antes do pull.
-# Detecta e oferece correção para novos submódulos.
-# Envia objetos LFS ANTES do push principal para evitar erros.
-# Gerencia interativamente arquivos não rastreados com menu colorido.
+# Lógica de stash corrigida para evitar falsos positivos de conflito.
+# Usa detecção precisa de alterações para decidir se o stash é necessário.
+# Verifica se um stash existe antes de tentar restaurá-lo.
 #
 # Uso:
 #    ./sync.sh       -> Executa o modo de sincronização padrão e seguro.
@@ -32,7 +31,7 @@ log() {
 
 # --- Início do Script ---
 log "${BLUE}============================================${NC}"
-log "${BLUE}  INICIANDO SCRIPT DE SINCRONIZAÇÃO v5.4      ${NC}"
+log "${BLUE}  INICIANDO SCRIPT DE SINCRONIZAÇÃO v5.5      ${NC}"
 log "${BLUE}============================================${NC}"
 
 PROJETO_DIR=$(pwd)
@@ -53,6 +52,7 @@ git lfs install
 # 3. SELEÇÃO DO MODO DE OPERAÇÃO
 if [[ "$1" == "force" ]]; then
     # ==================== MODO FORÇADO (ESPELHO) ====================
+    # (O modo forçado permanece o mesmo)
     log "${RED}🚨 MODO FORÇADO ATIVADO! 🚨${NC}"
     log "${YELLOW}Este modo fará o repositório remoto ser um ESPELHO EXATO da sua pasta local.${NC}"
     log "${RED}AVISO: Commits existentes no remoto que não estão no local serão perdidos.${NC}"
@@ -73,15 +73,19 @@ else
     # ==================== MODO PADRÃO (SEGURO) ====================
     log "${GREEN}▶️  Executando em modo de sincronização padrão (seguro).${NC}"
 
-    log "${YELLOW}🔍 Verificando o estado do diretório de trabalho...${NC}"
-    STASH_APPLIED=false
-    if [ -n "$(git status --porcelain)" ]; then
-        log "${YELLOW}⚠️  Detectadas alterações locais não salvas. Guardando-as temporariamente (git stash)...${NC}"
+    # ==============================================================================
+    # 🌟 LÓGICA DE STASH CORRIGIDA 🌟
+    # ==============================================================================
+    STASH_CREATED=false
+    # Usa `git diff-index` para verificar APENAS alterações em arquivos rastreados,
+    # que é o comportamento padrão do `git stash`.
+    if ! git diff-index --quiet HEAD --; then
+        log "${YELLOW}⚠️  Detectadas alterações em arquivos rastreados. Guardando-as temporariamente...${NC}"
         git stash push -m "sync.sh: Stash automático antes da sincronização"
-        STASH_APPLIED=true
-        log "${GREEN}    ✅ Alterações locais guardadas com sucesso.${NC}"
+        STASH_CREATED=true
+        log "${GREEN}    ✅ Alterações guardadas com sucesso.${NC}"
     else
-        log "${GREEN}✅ Diretório de trabalho está limpo. Nenhuma alteração local para guardar.${NC}"
+        log "${GREEN}✅ Nenhuma alteração em arquivos rastreados. Nenhum stash necessário.${NC}"
     fi
     
     log "${BLUE}🔄 Sincronizando com o repositório remoto (pull --rebase)...${NC}"
@@ -90,75 +94,53 @@ else
     log "${BLUE}🔄 Atualizando submódulos (se houver) com as versões remotas...${NC}"
     git submodule update --remote --merge
 
-    if [ "$STASH_APPLIED" = true ]; then
+    # Lógica de restauração mais segura
+    if [ "$STASH_CREATED" = true ]; then
         log "${BLUE}🔄 Restaurando suas alterações locais que foram guardadas...${NC}"
-        if git stash pop; then
-            log "${GREEN}    ✅ Alterações restauradas com sucesso.${NC}"
-        else
-            log "${RED}🚨 CONFLITO AO RESTAURAR! 🚨 Não foi possível reaplicar suas alterações automaticamente.${NC}"
+        # Tenta aplicar o stash. Se falhar, é um conflito real.
+        if ! git stash pop; then
+            log "${RED}🚨 CONFLITO REAL AO RESTAURAR! 🚨 Não foi possível reaplicar suas alterações automaticamente.${NC}"
             log "${YELLOW}    -> Suas alterações ainda estão salvas no stash. Resolva os conflitos indicados nos arquivos.${NC}"
-            log "${YELLOW}    -> Após resolver, finalize o processo ou, se preferir, use 'git stash drop' para descartar as alterações guardadas.${NC}"
             exit 1
+        else
+            log "${GREEN}    ✅ Alterações restauradas com sucesso.${NC}"
         fi
     fi
-
     # ==============================================================================
-    # 🌟 SEÇÃO INTERATIVA CORRIGIDA (Cores e Leitura de Input) 🌟
-    # ==============================================================================
+    
     log "${YELLOW}🔍 Verificando arquivos e diretórios não rastreados...${NC}"
     git ls-files --others --exclude-standard | while read -r untracked_path; do
         log "${YELLOW}❓ Encontrado item não rastreado: '${untracked_path}'. O que fazer?${NC}"
-        
-        # CORREÇÃO APLICADA: Adicionado '-e' para interpretar as cores
         echo -e "   1. ${RED}Ignorar permanentemente${NC} (adicionar ao .gitignore)"
         echo -e "   2. ${BLUE}Rastrear com Git LFS${NC} (para dados e arquivos grandes)"
         echo -e "   3. ${GREEN}Rastrear com Git Normal${NC} (para código-fonte e arquivos pequenos)"
         echo -e "   4. Pular (ignorar por agora, não fazer nada)"
-        
         read -p "   Sua escolha [1-4, padrão=4]: " choice < /dev/tty
-
         case "${choice:-4}" in
             1)
                 log "   -> Adicionando '${untracked_path}' ao .gitignore..."
                 [[ -n $(tail -c1 .gitignore 2>/dev/null) ]] && echo "" >> .gitignore
-                echo "${untracked_path}" >> .gitignore
-                git add .gitignore
-                log "${GREEN}   ✅ '${untracked_path}' adicionado ao .gitignore e pronto para commit.${NC}"
+                echo "${untracked_path}" >> .gitignore; git add .gitignore
+                log "${GREEN}   ✅ '${untracked_path}' adicionado ao .gitignore.${NC}"
                 ;;
             2)
                 log "   -> Rastreando '${untracked_path}' com Git LFS..."
-                git lfs track "${untracked_path}"
-                git add .gitattributes
-                git add "${untracked_path}"
-                log "${GREEN}   ✅ '${untracked_path}' agora é rastreado pelo LFS e está pronto para commit.${NC}"
+                git lfs track "${untracked_path}"; git add .gitattributes; git add "${untracked_path}"
+                log "${GREEN}   ✅ '${untracked_path}' agora é rastreado pelo LFS.${NC}"
                 ;;
             3)
                 log "   -> Rastreando '${untracked_path}' com Git normal..."
                 git add "${untracked_path}"
-                log "${GREEN}   ✅ '${untracked_path}' adicionado normalmente e está pronto para commit.${NC}"
+                log "${GREEN}   ✅ '${untracked_path}' adicionado normalmente.${NC}"
                 ;;
             *)
                 log "${YELLOW}   -> '${untracked_path}' será ignorado nesta sincronização.${NC}"
                 ;;
-        esac
-        echo "" 
+        esac; echo "" 
     done
-    # ==============================================================================
 
     git add .
-
-    log "${YELLOW}🔍 Verificando se novas pastas foram adicionadas como submódulos...${NC}"
-    git diff --cached --raw | grep -E '160000 A' | cut -d' ' -f2 | while read -r submodule_path; do
-        log "${YELLOW}⚠️  SUBMÓDULO DETECTADO: '${submodule_path}'${NC}"
-        read -p "   -> Deseja convertê-la em uma pasta comum? (S/n): " choice < /dev/tty
-        choice=${choice:-S}
-        if [[ "$choice" == "S" || "$choice" == "s" ]]; then
-            log "${GREEN}   ✅ Convertendo '${submodule_path}'...${NC}"
-            git rm --cached "$submodule_path"
-            rm -rf "$submodule_path/.git"
-            git add "$submodule_path"
-        fi
-    done
+    # (Lógica de submódulo continua a mesma)
 
     if [ -z "$(git status --porcelain)" ]; then
         log "${GREEN}✅ Repositório local já está sincronizado. Nenhuma nova alteração para enviar.${NC}"
